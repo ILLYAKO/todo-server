@@ -12,8 +12,9 @@
 cd todo-server
 npm ci
 ```
+#### 3. Download nodemon.json from https://drive.google.com/file/d/1WjgQbuYEaUDFx7i-US68FmUhAG7C3Jy6/view?usp=sharing and save in the root directory of the project
 
-#### 3. Start server
+#### 4. Start server
 
 ```Bash
 npm start
