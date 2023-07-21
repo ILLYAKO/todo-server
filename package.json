@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "npm i typescript && typescript",
+        "build": "npm i typescript && npm install --only=dev && tsc",
         "start": "concurrently \"tsc -w\" \"nodemon dist/js/app.js\""
     },
     "keywords": [],
