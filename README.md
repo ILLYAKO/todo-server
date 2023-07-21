@@ -20,5 +20,6 @@ npm ci
 npm start
 ```
 
-Online:<br/>
+### The working app was deployed on public hosting.
+
 `https://todo-server-app.onrender.com/todos`
