@@ -11,11 +11,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(todoRoutes);
 
-const uri: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.8igykmh.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
+const uri: string = `mongodb+srv://spamspamovs:YYLx74qA9JF3XvQo@cluster0.8igykmh.mongodb.net/todo_db?retryWrites=true&w=majority`;
 
-beforeAll(async () => 
-    await mongoose.connect(uri)
-);
+beforeAll(async () => {
+    await mongoose.connect(uri);
+});
 
 afterAll(async () => {
     await mongoose.disconnect();
@@ -25,8 +25,6 @@ describe("GET /todos", () => {
     it("should respond with an array of todos", async () => {
         const response = await request(app).get("/todos");
         expect(response.status).toBe(200);
-        expect(Array.isArray(response.body)).toBe(true);
+        expect(Array.isArray(response.body["todos"])).toBe(true);
     });
 });
-
-

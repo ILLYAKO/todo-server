@@ -25,7 +25,13 @@ npm ci
 npm start
 ```
 
-#### 4. Start React client side.
+#### 5. Start Jest test
+
+```Bash
+npm run test
+```
+
+#### 6. Start React client side.
 
 ### The working app was deployed on public hosting. You can see the demo version online:
 

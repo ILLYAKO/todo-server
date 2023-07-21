@@ -22,8 +22,10 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(body_parser_1.default.json());
 app.use(routes_1.default);
-const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.8igykmh.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
-beforeAll(() => __awaiter(void 0, void 0, void 0, function* () { return yield mongoose_1.default.connect(uri); }));
+const uri = `mongodb+srv://spamspamovs:YYLx74qA9JF3XvQo@cluster0.8igykmh.mongodb.net/todo_db?retryWrites=true&w=majority`;
+beforeAll(() => __awaiter(void 0, void 0, void 0, function* () {
+    yield mongoose_1.default.connect(uri);
+}));
 afterAll(() => __awaiter(void 0, void 0, void 0, function* () {
     yield mongoose_1.default.disconnect();
 }));
@@ -31,6 +33,6 @@ describe("GET /todos", () => {
     it("should respond with an array of todos", () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield (0, supertest_1.default)(app).get("/todos");
         expect(response.status).toBe(200);
-        expect(Array.isArray(response.body)).toBe(true);
+        expect(Array.isArray(response.body["todos"])).toBe(true);
     }));
 });
