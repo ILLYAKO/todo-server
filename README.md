@@ -25,7 +25,7 @@ npm ci
 npm start
 ```
 
-#### 4. Start React client
+#### 4. Start React client side.
 
 ### The working app was deployed on public hosting. You can see the demo version online:
 
